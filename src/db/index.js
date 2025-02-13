@@ -1,7 +1,10 @@
+// bd.js
+
+// Função para selecionar um usuário pelo ID
 async function selectUsuario(id) {
   const client = await connect();
   const query = "SELECT * FROM usuario WHERE id = $1";
-  const res = await client.query(query, [id]);
+  const res = await clientA.query(query, [id]);
   client.release();
   return res.rows;
 }
